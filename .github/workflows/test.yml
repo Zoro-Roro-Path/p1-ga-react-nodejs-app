@@ -18,7 +18,7 @@ jobs:
         run: npm test
   deploy:
     runs-on: ubuntu-latest
-    needs: test
+    needs: test   #remove this if u want to run jobs in parallel
     steps:
       - name: start deploy
         run: echo "start"
@@ -37,6 +37,6 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: Build project
-        run: npm build
+        run: npm run build
       - name: deploy
         run: echo "deploying...."
